@@ -120,6 +120,34 @@ paths:
           description: Method Not Allowed
       security:
         - Authorization: []
+
+  /api/bot:
+    post:
+      tags:
+        - api
+      summary: Censoring bad words but using LLM 
+      description: Not stable because the LLM take too much time
+      operationId: apiBot
+      requestBody: 
+        description: Classify text input using llm
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Text'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Text'
+        '400':
+          description: Error
+        '404':
+          description: Method Not Allowed
+      security:
+        - Authorization: []
   
 components:
   schemas:

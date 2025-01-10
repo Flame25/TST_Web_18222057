@@ -81,6 +81,22 @@
       <div id="predictResponse" class="api-response"></div>
     </div>
 
+
+    <!-- LLM Endpoint Section -->
+    <div class="container my-5">
+      <h2 class="section-title">LLM Endpoint</h2>
+      <p>Provide a words filetring but using LLM.</p>
+      <p style="color:red;"> Experimental Mode : Make take too long and make the other request not working until finished </p>  
+      <form id="llmForm" class="api-form">
+        <div class="form-group">
+          <label for="llmInput">Enter Sentence:</label>
+          <input type="text" class="form-control" id="llmInput" placeholder="Enter your sentence">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div id="llmResponse" class="api-response"></div>
+    </div>
+
     <!-- Footer -->
     <footer class="text-center py-4">
       <p>&copy; 2025 CodeBloop. All rights reserved.</p>

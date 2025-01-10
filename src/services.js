@@ -54,4 +54,25 @@ document.getElementById('predictForm').addEventListener('submit', function(event
         });
 });
 
+
+document.getElementById('llmForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const inputText = document.getElementById('llmInput').value;
+    fetch('https://textfilters.codebloop.my.id/api/predict', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+	    'Authorization': token
+        },
+        body: JSON.stringify({ 'text': inputText })
+    })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('predictResponse').innerHTML = `<strong>Class:</strong> ${data.response}`;
+        })
+        .catch(error => {
+            document.getElementById('predictResponse').innerHTML = `<strong>Error:</strong> ${error.message}`;
+        });
+});
+
 }
