@@ -68,10 +68,10 @@ document.getElementById('llmForm').addEventListener('submit', function(event) {
     })
         .then(response => response.json())
         .then(data => {
-            document.getElementById('predictResponse').innerHTML = `<strong>Class:</strong> ${data.response}`;
+            document.getElementById('llmResponse').innerHTML = `<strong>Response:</strong> ${data.response}`;
         })
         .catch(error => {
-            document.getElementById('predictResponse').innerHTML = `<strong>Error:</strong> ${error.message}`;
+            document.getElementById('llmResponse').innerHTML = `<strong>Error:</strong> ${error.message}`;
         });
 });
 
