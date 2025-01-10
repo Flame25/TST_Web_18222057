@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Showcase</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+    <style>
+      .hero-section {
+          background-color: #f8f9fa;
+          padding: 50px 0;
+      }
+      .section-title {
+          font-size: 2.5rem;
+          font-weight: bold;
+          margin-bottom: 30px;
+      }
+      .api-form {
+          max-width: 600px;
+          margin: 0 auto;
+      }
+      .api-response {
+          background-color: #f1f1f1;
+          padding: 20px;
+          border-radius: 5px;
+          margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="nav">
+      <i class="uil uil-bars navOpenBtn"></i>
+      <a href="#" class="logo">CodeBloop</a>
+      <ul class="nav-links">
+	<i class="uil uil-times navCloseBtn"></i>
+	<li><a href="/">Home</a></li>
+	<li><a href="/services.html">Services</a></li>
+	<li><a href="/docs.html">Docs</a></li>
+	<li><a href="/profiles.html">Profile</a></li>
+      </ul>
+      <button id="login-btn" class="login-btn">Login</button>
+    </nav>
+
+    <div class= "spacer"></div>
+
+    <div class="container mt-4 text-center">
+      <div class="mt-4 p-5 bg-primary text-white rounded">
+	<h1 class="display-4">Welcome to the API Showcase</h1>
+	<p class="lead">Enter a sentence and interact with our API endpoints: Filter and Predict.</p>
+      </div>
+    </div>
+
+    <!-- Filter Endpoint Section -->
+    <div class="container my-5">
+      <h2 class="section-title">Filter Endpoint</h2>
+      <p>Provide a sentence to apply a filter operation.</p>
+      <form id="filterForm" class="api-form">
+        <div class="form-group">
+          <label for="filterInput">Enter Sentence:</label>
+          <input type="text" class="form-control" id="filterInput" placeholder="Enter your sentence">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div id="filterResponse" class="api-response"></div>
+    </div>
+
+    <!-- Predict Endpoint Section -->
+    <div class="container my-5">
+      <h2 class="section-title">Predict Endpoint</h2>
+      <p>Provide a sentence to classify the sentence into some classes if it's considered as bad words.</p>
+      <form id="predictForm" class="api-form">
+        <div class="form-group">
+          <label for="predictInput">Enter Sentence:</label>
+          <input type="text" class="form-control" id="predictInput" placeholder="Enter your sentence">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div id="predictResponse" class="api-response"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+      <p>&copy; 2025 CodeBloop. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="src/script.js"></script>
+    <script type="module" src="src/services.js"></script>
+
+  </body>
+</html>

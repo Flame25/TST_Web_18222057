@@ -1,0 +1,149 @@
+openapi: 3.0.3
+info:
+  title: Text Filtering
+  description: |-
+  version: 1.0.11
+servers:
+  - url: https://textfilters.codebloop.my.id/
+tags:
+  - name: auth
+    description: Everything about user authentication and account
+  - name: api
+    description: Access to API after login
+  - name: user
+    description: Operations about user
+
+paths:
+  /auth/login:
+    post:
+      tags:
+        - auth
+      summary: Login to user account
+      description: Login to user account
+      operationId: loginUser
+      requestBody:
+        description: Login to a registered account
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'          
+
+        '400':
+          description: Error
+        '405': 
+          description: Method Not Allowed
+  /auth/signup: 
+    post: 
+      tags:
+        - auth
+      summary: Register an account 
+      description: Register an account 
+      operationId: registerUser
+      requestBody:
+        description: Login to a registered account
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'          
+        '400':
+          description: Error
+        '405': 
+          description: Method Not Allowed
+  /api/filter:
+    post:
+      tags:
+        - api
+      summary: Filter a text
+      description: Returns a filtered text
+      operationId: filter Text
+      requestBody: 
+        description: Filtering text input
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Text'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Text'
+        '400':
+          description: Error
+        '404':
+          description: Method Not Allowed
+      security:
+        - Authorization: []
+        
+  /api/predict:
+    post:
+      tags:
+        - api
+      summary: Classify a text if it's considered as a bad word
+      description: Returns a word class
+      operationId: getClass
+      requestBody: 
+        description: Classify text input
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Text'
+        required: true
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Text'
+        '400':
+          description: Error
+        '404':
+          description: Method Not Allowed
+      security:
+        - Authorization: []
+  
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        user_name:
+          type: string
+          example: theUser
+        password:
+          type: string
+          example: '12345'
+      xml:
+        name: user
+    Text:
+      type: object
+      properties:
+        text:
+          type: string
+          example: hello there
+      xml:
+        name: text
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      name: Authorization
+      in: header

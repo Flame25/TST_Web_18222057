@@ -1,0 +1,23 @@
+{
+  "name": "web_tst",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "hbs": "^4.2.0",
+    "mysql": "^2.18.1",
+    "sweetalert2": "^11.15.10"
+  }
+}

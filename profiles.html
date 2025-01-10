@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="src/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="nav">
+    <i class="uil uil-bars navOpenBtn"></i>
+    <a href="#" class="logo">CodeBloop</a>
+    <ul class="nav-links">
+      <i class="uil uil-times navCloseBtn"></i>
+      <li><a href="/">Home</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/docs.html">Docs</a></li>
+      <li><a href="/profiles.html">Profile</a></li>
+    </ul>
+    <button id="login-btn" class="login-btn">Login</button>
+  </nav>
+
+  <div class="spacer"></div>
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">User Profile</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Username</h5>
+                        <p class="text-muted" id="username">JohnDoe</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>API Key</h5>
+                        <p class="text-muted" id="api-key">your-api-key-1234567890</p>
+                    </div>
+                </div>
+                <button class="btn btn-warning" onclick="copyApiKey()">Copy API Key</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="src/script.js"></script>
+    <script type="module" src="src/profile.js"></script>
+    <script>
+      // Function to copy the API key
+      function copyApiKey() {
+          const apiKey = document.getElementById('api-key').textContent; // Get the API key text
+          navigator.clipboard.writeText(apiKey) // Copy to clipboard
+              .then(() => {
+                  alert('API Key copied to clipboard!');
+              })
+              .catch(err => {
+                  console.error('Failed to copy API Key: ', err);
+                  alert('Failed to copy API Key.');
+              });
+      }
+    </script>
+</body>
+</html>
