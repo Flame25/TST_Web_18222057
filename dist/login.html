@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     
-    <script type="module" crossorigin src="/assets/login-34c7a514.js"></script>
+    <script type="module" crossorigin src="/assets/login-7bbd8245.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/sweetalert2.esm.all-df26762b.js">
     <link rel="stylesheet" href="/assets/login-36caca83.css">
   </head>
   <body>
@@ -28,15 +29,17 @@
 
 	<div class="forget-register">
 	  <a href="#"> Forget Password</a>
-          <a href="/register" style="color:#4a98f7; font-weight:500;">Sign up now</a>
+          <a href="/register.html" style="color:#4a98f7; font-weight:500;">Sign up now</a>
 	</div> 
         <button id="login-button" type="submit">Sign In</button>
-        <div class="form-help"> 
-          <div class="remember-me">
-            <input type="checkbox" id="remember-me">
-            <label for="remember-me">Remember me</label>
-	    <div id="error-message" class="error-message"></div>
-          </div>
+        <div class="form-help">
+	  <div class="below-btn"> 
+            <div class="remember-me">
+              <input type="checkbox" id="remember-me">
+              <label for="remember-me">Remember me</label>
+            </div>
+	    <div style="display: flex;justify-content: flex-end;padding-top: 10px;font-weight:500;color:red;" id="error-message" class="error-message"></div>
+	  </div>
         </div>
       </form>
     </div>
